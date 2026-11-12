@@ -15,6 +15,7 @@ jobs:
       - name: Setup Android SDK and Accept Licenses
         run: |
           export ANDROID_HOME=$HOME/android-sdk
+          mkdir -p $ANDROID_HOME
           yes | sdkmanager --sdk_root=$ANDROID_HOME "platforms;android-33" "build-tools;33.0.2" || true
           echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
 
